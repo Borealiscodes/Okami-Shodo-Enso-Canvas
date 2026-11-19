@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <title>Ōkami Shodō & Ensō Canvas — Japanese Calligraphy History & Celestial Brush Studio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>🖌️ Ōkami Shodō &amp; Ensō Canvas <span class="badge">Q16.16 • Washi Studio</span></h1>
+    <div id="hud-enso">Celestial Ensō Blooms: 0</div>
+  </header>
+
+  <main class="studio-layout">
+    <section class="scroll-section">
+      <div class="history-card">
+        <div class="glyph-box" id="era-glyph">〇</div>
+        <div>
+          <strong id="era-title">0. Zen Ensō Circle (円相 • One-Breath Brush)</strong>
+          <div id="era-period" class="meta">Kamakura–Edo Zen Tradition • Ensō</div>
+          <p id="era-history">Draw a continuous circle on the washi paper to trigger an Ōkami-style Celestial Brush sakura bloom!</p>
+        </div>
+      </div>
+
+      <canvas id="washi-canvas" width="680" height="460"></canvas>
+
+      <div class="pigment-bar">
+        <button class="swatch active" data-pigment="sumi">墨 Sumi Black</button>
+        <button class="swatch" data-pigment="shu">朱 Vermilion</button>
+        <button class="swatch" data-pigment="ai">藍 Indigo</button>
+        <button class="swatch" data-pigment="kinpaku">金箔 Gold Leaf</button>
+        <button class="swatch" data-pigment="rokusho">緑青 Malachite</button>
+        <button class="swatch" data-pigment="murasaki">紫 Violet</button>
+      </div>
+
+      <div class="action-bar">
+        <button id="btn-hanko">🏮 Stamp Hanko Seal</button>
+        <button id="btn-watermark">Tracing Guide: On</button>
+        <button id="btn-undo">Undo Stroke</button>
+        <button id="btn-clear">Fresh Washi Sheet</button>
+        <button id="btn-audio">Sound: Muted</button>
+      </div>
+    </section>
+
+    <aside class="sidebar">
+      <h3>History of Japanese Calligraphy</h3>
+      <div class="era-list">
+        <button data-era="0">0. Zen Ensō (円相 • Circle)</button>
+        <button data-era="1">1. Tensho (篆書 • Seal Script)</button>
+        <button data-era="2">2. Reisho (隷書 • Clerical)</button>
+        <button data-era="3">3. Kaisho (楷書 • Regular)</button>
+        <button data-era="4">4. Gyōsho (行書 • Semi-Cursive)</button>
+        <button data-era="5">5. Sōsho &amp; Kana (草書・仮名)</button>
+      </div>
+
+      <h3>Scroll Receipt (SHA-256)</h3>
+      <button id="btn-receipt">Generate Scroll Receipt</button>
+      <textarea id="receipt-output" rows="6" readonly placeholder="Tap to generate SHA-256 receipt..."></textarea>
+    </aside>
+  </main>
+
+  <script type="module" src="src/shodo-app.js"></script>
+</body>
+</html>
