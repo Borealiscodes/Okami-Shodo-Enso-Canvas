@@ -1,0 +1,10 @@
+{
+  "name": "okami-shodo-enso-canvas",
+  "version": "1.0.0",
+  "description": "Interactive Japanese calligraphy (Shodō) and Ensō painting studio on washi paper with Q16.16 bristle tapering, Celestial Brush circle recognition, and a six-era history guide.",
+  "type": "module",
+  "scripts": {
+    "test": "node --test test/enso-kernel.test.mjs"
+  },
+  "license": "MIT"
+}
