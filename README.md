@@ -113,4 +113,8 @@ Open **`http://localhost:8080`**, tap **`Sound: Muted`** to awaken the *Koto* & 
 * Architectural Lineage: Built on the deterministic Q16.16 substrate and strict Ledger 1 / Ledger 2 separation from Borealiscodes/ndh-game-dev-kit and Borealiscodes/Zen-Parable-Geometry-Odyssey.
 * Author & License: Borealis Serenity Hedling (NDH-RESEARCH-PILOT • County Dublin, Ireland) • MIT License • Signed-off-by: Borealis Serenity Hedling <chguard-sentinel@vaked.dev>.
 
+---
 
+## Academic reference
+
+Hedling, B. S. (2026). Deterministic Fixed-Point Rheology and Topological Loop Recognition in Interactive Japanese Calligraphy (Shodō) and Ensō Simulation. Zenodo. https://doi.org/10.5281/zenodo.24368482 
