@@ -1,16 +1,24 @@
-> ### 🚧 UNDER CONSTRUCTION — ŌKAMI-INSPIRED SHODŌ & ENSŌ CALLIGRAPHY STUDIO (PRE-ALPHA)
-> **Status:** Active Architectural Scaffolding & Celestial Brush Prototyping • Zero-Float `Q16.16` • Zero Dependencies  
+> ### ✅ RELEASE v1.0.0 — SHODŌ & ENSŌ CALLIGRAPHY STUDIO VERIFIED (`3/3` PASSING)
+> **Status:** `v1.0.0` Live & Verified • Zero-Float `Q16.16` • Velocity Bristle Tapering • Celestial *Ensō* Bloom • 6 Historical Eras  
 > 
-> **Project Scope:** An interactive Japanese calligraphy (*Shodō*) and *Ensō* brush painting studio combining velocity-sensitive *sumi* and mineral ink bristles, *Ōkami*-inspired Celestial Brush circle recognition, and an interactive historical journey through the six foundational scripts of Japanese calligraphy.
+> **Release Highlights (Nov 2026):** Complete zero-dependency Japanese calligraphy (*Shodō*) and *Ensō* brush studio verified on ARM64 hardware (`node --test`: **3/3 passing**). Features inverse-speed `Q16.16` bristle tapering with dry-brush *kasure* filaments, closed-loop Celestial *Ensō* circle recognition that blooms golden *sakura* blossoms, six traditional mineral pigments, red vermilion *Hanko* seals, and an interactive timeline of Japanese calligraphy.
 
 # 🖌️ Ōkami Shodō & Ensō Canvas — Japanese Calligraphy History & Celestial Brush Studio
 
 **An interactive, zero-dependency Japanese calligraphy (*Shodō* / 書道) and *Ensō* (円相) painting studio on textured *washi* paper—featuring velocity-sensitive *sumi* and mineral ink brushes, *Ōkami*-inspired Celestial Brush loop recognition that blooms golden *sakura* blossoms when you close an *Ensō* circle, and an interactive timeline teaching the history of Japanese calligraphy.**
 
 [![License: MIT](https://shields.io)](LICENSE)
-[![Status: Pre-Alpha Scaffolding](https://shields.io)](#-build-roadmap-v01--v10)
+[![Status: v1.0.0 Verified](https://shields.io)](#-quickstart--verification)
 [![Math: Q16.16 Fixed-Point](https://shields.io)](#-ōkami-celestial-brush--q1616-bristle-physics)
-[![Audio: Koto & Brush Whisper](https://shields.io)](#-repository-scaffolding)
+[![Tests: 3/3 Passing](https://shields.io)](#-quickstart--verification)
+
+---
+
+## 📖 Companion Preprints, History Guides & Explainers
+
+* **Formal Preprint (APA 7th Ed.):** [`docs/shodo-enso-preprint.md`](docs/shodo-enso-preprint.md) — *Deterministic Fixed-Point Rheology and Topological Loop Recognition in Interactive Japanese Calligraphy (Shodō) and Ensō Simulation*.
+* **In-Depth Cultural & Modern Art Guide:** [`docs/history-and-modern-japanese-calligraphy.md`](docs/history-and-modern-japanese-calligraphy.md) — Covers the *Four Treasures of the Study*, Heian *Kana* literature, post-war *Bokujinkai* avant-garde calligraphy, Clover Studio's *Ōkami*, and **teamLab Borderless** Spatial Calligraphy.
+* **Plain-Language Explainer Tile:** [`tiles/bill-nye-shodo-enso-explainer.md`](tiles/bill-nye-shodo-enso-explainer.md) — Breaks down bristle physics, loop-closure math, and game mechanics in everyday terms.
 
 ---
 
@@ -20,12 +28,12 @@ Japanese calligraphy (*Shodō*, literally *"The Way of Writing"*) evolved over m
 
 | # | Script / Style | Kanji | Historical Era & Cultural Story |
 | :- | :--- | :--- | :--- |
+| **0** | **Zen *Ensō* Circle** | 円相 | **Kamakura–Edo Zen Tradition (13th–18th Century):** Painted in a single unhesitating breath to express wholeness, emptiness (*Śūnyatā*), and presence. |
 | **1** | **Seal Script (*Tensho*)** | 篆書 | **Shang/Zhou to Qin Dynasty (c. 1200 BCE – 200 CE):** Uniform, architectural strokes descended from oracle-bone and bronze vessel engravings—still used today on red vermilion *Hanko* artist seals. |
 | **2** | **Clerical Script (*Reisho*)** | 隷書 | **Han Dynasty (c. 200 BCE – 200 CE):** Invented by scribes needing faster brush rhythm on wooden slips; introduced dramatic horizontal flaring (*hataku*) that gave brush writing its living pulse. |
-| **3** | **Regular Script (*Kaisho*)** | 楷書 | **Nara & Early Heian Periods (7th–9th Century):** Brought to Japan alongside Buddhist sutras and Tang-dynasty diplomacy (*Sanpitsu* / Three Brushes, including Kūkai); crisp, balanced architectural structure. |
+| **3** | **Regular Script (*Kaisho*)** | 楷書 | **Nara & Early Heian Periods (7th–9th Century):** Brought to Japan alongside Buddhist sutras and Tang-dynasty diplomacy (*Sanpitsu* / Three Brushes, including Kūkai); crisp, balanced architectural structure exemplified by 永 (*Ei*). |
 | **4** | **Semi-Cursive (*Gyōsho*)** | 行書 | **Heian Court Period (9th–12th Century):** "Walking script"—softens sharp corners into flowing, connected energy while keeping every character clearly legible. |
-| **5** | **Grass Script (*Sōsho*)** | 草書 | **Kamakura & Muromachi Zen Eras (12th–16th Century):** "Running/grass script"—distills characters into single sweeping gestures of pure breath and momentum, favored by Zen calligraphers painting *Ensō* circles. |
-| **6** | **Hiragana & *Onnade* (*Kana*)** | 仮名 | **Mid-Heian Literature Golden Age (10th–11th Century):** Developed predominantly by court women—including Murasaki Shikibu (*The Tale of Genji*) and Sei Shōnagon (*The Pillow Book*)—transforming fluid *Sōsho* forms into delicate phonetic poetry ribbons. |
+| **5** | **Grass Script & *Kana* (*Sōsho* / *Onnade*)** | 草書・仮名 | **Mid-Heian Golden Age (10th–11th Century):** Distilled sweeping gestures favored by Zen calligraphers and adapted by court women—including Murasaki Shikibu (*The Tale of Genji*) and Sei Shōnagon—into delicate phonetic poetry ribbons. |
 
 ---
 
@@ -44,44 +52,65 @@ Japanese calligraphy (*Shodō*, literally *"The Way of Writing"*) evolved over m
 
 ## 🌸 *Ōkami* Celestial Brush & `Q16.16` Bristle Physics
 
-* **Velocity-Sensitive Bristle Tapering (`Ledger 1`):** Every pointer/touch coordinate is recorded in signed 32-bit `Q16.16` integers (`1.0 === 65536`). Moving slowly widens the brush (`18 px`) as ink soaks into the *washi* fibers; swift sweeps taper down to `2 px` with subtle dry-brush bristle streaks.
-* **Celestial *Ensō* Circle Miracle:** Drawing a single continuous loop whose end meets its start (`closureRatio >= 0.72` with circular aspect balance) triggers an *Ōkami*-style Celestial Brush bloom—scattering golden *sakura* blossoms along the circle and ringing a *Yo-scale* *Koto* + *Bonshō* temple bell chord (`Ledger 2`).
-* **Vermilion *Hanko* Stamp & `SHA-256` Scroll Receipt:** Stamp your finished calligraphy scroll with a traditional red *Hanko* seal and generate a deterministic `SHA-256` receipt.
+* **Velocity-Sensitive Bristle Tapering (`Ledger 1`):** Every pointer/touch coordinate is recorded in signed 32-bit `Q16.16` integers (`1.0 === 65536`). Moving slowly widens the brush (`18.5 px`) as ink soaks into the *washi* fibers; swift sweeps taper down to `2.4 px` with subtle dry-brush *kasure* bristle filaments.
+* **Celestial *Ensō* Circle Miracle:** Drawing a single continuous loop whose end meets its start (`aspect >= 0.62`, `gap <= 0.38 * diameter`, `0.72 <= lengthRatio <= 1.45`) triggers an *Ōkami*-style Celestial Brush bloom—scattering golden *sakura* blossoms along the circle and ringing a *Yo-scale* *Koto* + *Bonshō* temple bell arpeggio (`Ledger 2`).
+* **Vermilion *Hanko* Stamp & `SHA-256` Scroll Receipt:** Stamp your finished calligraphy scroll with a traditional red *Hanko* seal (`書道 / 円相`) and generate a deterministic `SHA-256` receipt.
 
 ---
 
-## 📁 Repository Scaffolding
+## 📁 Repository Structure
 
 ```text
 Okami-Shodo-Enso-Canvas/
-├── index.html                    # Washi paper viewport, pigment palette, era selector & Hanko stamp button
-├── style.css                     # Handmade warm washi parchment & sumi-ink exhibition framing
-├── package.json                  # Zero-dependency ESM manifest (`npm test` -> `node --test`)
-├── LICENSE                       # MIT License
-├── README.md                     # History of Shodō, mineral pigments, Celestial Brush & scaffolding
+├── index.html                                        # Washi paper viewport, pigment palette, era selector & Hanko stamp
+├── style.css                                         # Handmade warm washi parchment & sumi-ink exhibition framing
+├── package.json                                      # Zero-dependency ESM manifest (`npm test` -> `node --test`)
+├── LICENSE                                           # MIT License
+├── README.md                                         # Release overview, Shodō history, mineral palette & quickstart
+├── docs/
+│   ├── shodo-enso-preprint.md                        # Formal mathematical preprint with APA 7th Ed. references
+│   └── history-and-modern-japanese-calligraphy.md    # In-depth history, Bokujinkai avant-garde & teamLab Borderless
+├── tiles/
+│   └── bill-nye-shodo-enso-explainer.md              # Altitude A7 plain-language explainer & game-mechanic guide
 ├── src/
-│   ├── core.js                   # Zero-float Q16.16 fixed-point arithmetic & synchronous SHA-256
-│   ├── shodo-history.js          # 6 historical Japanese calligraphy eras, cultural essays & tracing paths
-│   ├── enso-kernel.js            # Q16.16 stroke recorder, velocity bristle tapering & Ensō circle detector
-│   ├── shodo-audio.js            # Mute-by-default WebAudio brush-on-paper whisper & Koto/Bell harmonics
-│   ├── washi-renderer.js         # Textured washi paper, tapered multi-bristle ink strokes, sakura & Hanko seal
-│   └── shodo-app.js              # Pointer/touch calligraphy tracker, era switcher & scroll reset/stamp
+│   ├── core.js                                       # Zero-float Q16.16 fixed-point arithmetic & synchronous SHA-256
+│   ├── shodo-history.js                              # 6 historical Japanese calligraphy eras, cultural essays & glyphs
+│   ├── enso-kernel.js                                # Q16.16 stroke recorder, velocity bristle tapering & Ensō detector
+│   ├── shodo-audio.js                                # Mute-by-default WebAudio Koto plucks & Celestial bloom chimes
+│   ├── washi-renderer.js                             # Textured washi paper, tapered multi-bristle ink, sakura & Hanko seal
+│   └── shodo-app.js                                  # Pointer/touch calligraphy tracker, era switcher & scroll reset/stamp
 └── test/
-    └── enso-kernel.test.mjs      # Built-in `node --test` suite verifying Q16.16 tapering & Ensō closure
+    └── enso-kernel.test.mjs                          # Built-in `node --test` suite verifying Q16.16 tapering & Ensō closure
 ```
 
 ---
 
-## 🛠️ Build Roadmap (`v0.1` → `v1.0`)
+## 🚀 Quickstart & Verification
 
-* **`v0.1` (Velocity-Sensitive `Q16.16` Brush & *Ensō* Detector):** Record pointer paths in `Q16.16`, compute inverse-speed bristle width, and verify closed-loop *Ensō* recognition (`Ledger 1`).
-* **`v0.2` (Six-Era *Shodō* History & Tracing Watermarks):** Add the interactive historical essays and faint *washi* tracing guides for *Tensho*, *Reisho*, *Kaisho*, *Gyōsho*, *Sōsho*, and *Kana*.
-* **`v0.3` (Multi-Bristle *Washi* Renderer & *Hanko* Seal):** Render dry-brush *kasure* streaks, six traditional mineral pigments, golden *sakura* blooms, and vermilion *Hanko* stamps (`Ledger 2`).
-* **`v1.0` (Brush Whisper & *Koto* Audio + Full Test Suite):** Wire mute-by-default brush-on-paper WebAudio synthesis and `node --test` verification.
+```bash
+# 1. Run deterministic Q16.16 bristle tapering & Ensō closure tests (3/3 passing)
+node --test test/enso-kernel.test.mjs
+
+# 2. Launch locally in browser
+python3 -m http.server 8080
+```
+
+Open **`http://localhost:8080`**, tap **`Sound: Muted`** to awaken the *Koto* & *Bonshō* temple bell audio, draw a single continuous **Ensō circle** to bloom golden *sakura* blossoms, explore all six calligraphy eras over faint *washi* watermarks, and stamp your red ***Hanko* artist seal**.
+
+---
+
+## 🛠️ Completed Release Roadmap (`v0.1` → `v1.0.0`)
+
+* **◈ Phase 1 (`v0.1` — Complete ✅):** Velocity-sensitive `Q16.16` brush recorder and bounded geometric *Ensō* loop-closure detector (`Ledger 1`).
+* **◈ Phase 2 (`v0.2` — Complete ✅):** Six-era *Shodō* historical timeline (*Ensō*, *Tensho*, *Reisho*, *Kaisho*, *Gyōsho*, *Sōsho/Kana*) with toggleable *washi* tracing watermarks.
+* **◈ Phase 3 (`v0.3` — Complete ✅):** Multi-bristle dry-brush *kasure* renderer, six traditional mineral pigments, golden *sakura* blooms, and vermilion *Hanko* stamps (`Ledger 2`).
+* **◈ Phase 4 (`v1.0.0` — Complete ✅):** Mute-by-default WebAudio *Koto* & *Bonshō* chimes, formal preprint, modern calligraphy & *teamLab Borderless* guide, and `3/3` `node --test` verification.
 
 ---
 
 ## 🤝 Provenance & License
 
-* **Architectural Lineage:** Built on the deterministic `Q16.16` substrate and strict `Ledger 1` / `Ledger 2` separation from [`Borealiscodes/ndh-game-dev-kit`](https://github.com) and [`Borealiscodes/Zen-Parable-Geometry-Odyssey`](https://github.com).
-* **Author & License:** Borealis Serenity Hedling (`NDH-RESEARCH-PILOT` • County Dublin, Ireland) • MIT License • `Signed-off-by: Borealis Serenity Hedling <chguard-sentinel@vaked.dev>`.
+* Architectural Lineage: Built on the deterministic Q16.16 substrate and strict Ledger 1 / Ledger 2 separation from Borealiscodes/ndh-game-dev-kit and Borealiscodes/Zen-Parable-Geometry-Odyssey.
+* Author & License: Borealis Serenity Hedling (NDH-RESEARCH-PILOT • County Dublin, Ireland) • MIT License • Signed-off-by: Borealis Serenity Hedling <chguard-sentinel@vaked.dev>.
+
+
